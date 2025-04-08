@@ -5,8 +5,30 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: import('@/views/HomePage.vue'),
+      name: 'DefaultLayout',
+      component: import('@/layouts/DefaultLayout.vue'),
+      children: [
+        {
+          path: '',
+          name: 'home',
+          component: import('@/views/HomePageView.vue'),
+        },
+        {
+          path: 'privacy-policy',
+          name: 'PrivacyPolicy',
+          component: import('@/views/PrivacyPolicyView.vue'),
+        },
+        {
+          path: 'terms-of-service',
+          name: 'TermsOfService',
+          component: import('@/views/TermsOfServiceView.vue'),
+        },
+        {
+          path: 'contact',
+          name: 'ContactPage',
+          component: import('@/views/ContactPageView.vue'),
+        },
+      ],
     },
     {
       path: '/:pathMatch(.*)*',
