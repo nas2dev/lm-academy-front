@@ -6,27 +6,44 @@ const router = createRouter({
     {
       path: '/',
       name: 'DefaultLayout',
-      component: import('@/layouts/DefaultLayout.vue'),
+      component: () => import('@/layouts/DefaultLayout.vue'),
       children: [
         {
           path: '',
           name: 'home',
-          component: import('@/views/HomePageView.vue'),
+          component: () => import('@/views/HomePageView.vue'),
         },
         {
           path: 'privacy-policy',
           name: 'PrivacyPolicy',
-          component: import('@/views/PrivacyPolicyView.vue'),
+          component: () => import('@/views/PrivacyPolicyView.vue'),
+          meta: {
+            visitor: true,
+          },
         },
         {
           path: 'terms-of-service',
           name: 'TermsOfService',
-          component: import('@/views/TermsOfServiceView.vue'),
+          component: () => import('@/views/TermsOfServiceView.vue'),
+          meta: {
+            visitor: true,
+          },
         },
         {
           path: 'contact',
           name: 'ContactPage',
-          component: import('@/views/ContactPageView.vue'),
+          component: () => import('@/views/ContactPageView.vue'),
+          meta: {
+            visitor: true,
+          },
+        },
+        {
+          path: 'about-us',
+          name: 'AboutUs',
+          component: () => import('@/views/AboutUsView.vue'),
+          meta: {
+            visitor: true,
+          },
         },
       ],
     },

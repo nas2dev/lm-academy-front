@@ -7,7 +7,7 @@
           >Home</router-link
         >
         <span>|</span>
-        <router-link to="/about-us" active-class="border-b-textPrimary border-b-2"
+        <router-link :to="{ name: 'AboutUs' }" active-class="border-b-textPrimary border-b-2"
           >About Us</router-link
         >
         <span>|</span>
