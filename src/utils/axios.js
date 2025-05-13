@@ -46,6 +46,9 @@ Axios.interceptors.response.use(
 
       if (message == 'token expired') {
         return mirrorRequest(requestConfig)
+      } else if (message == 'Your email or password is invalid') {
+        localStorage.removeItem('lm-access-token')
+        return Promise.reject(error)
       } else {
         localStorage.removeItem('lm-access-token')
         window.location.href = '/login'
