@@ -59,6 +59,7 @@ Axios.interceptors.response.use(
       localStorage.removeItem('lm-access-token')
       window.location.href = '/login'
     }
+    return Promise.reject(error)
   },
 )
 

@@ -53,6 +53,16 @@ const handleLogout = () => {
             </router-link>
           </li>
 
+          <li class="sidebar-item">
+            <router-link
+              class="sidebar-link gap-3 py-2.5 my-1 text-base flex items-center relative rounded-md text-gray-500 w-full"
+              :to="{ name: 'DashboardRandomGame' }"
+            >
+              <i class="ti ti-cards ps-2 text-2xl"></i>
+              <span>Random Game</span>
+            </router-link>
+          </li>
+
           <li v-if="userStore.user.roles[0]?.name == 'User'" class="sidebar-item">
             <router-link
               class="sidebar-link gap-3 py-2.5 my-1 text-base flex items-center relative rounded-md text-gray-500 w-full"

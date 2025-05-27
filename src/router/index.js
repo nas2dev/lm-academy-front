@@ -99,6 +99,14 @@ const router = createRouter({
           },
         },
         {
+          path: 'pick-random-user',
+          name: 'DashboardRandomGame',
+          component: () => import('@/views/Dashboard/User/DashboardRandomGame.vue'),
+          meta: {
+            isAuthorized: true,
+          },
+        },
+        {
           path: 'send-registration-invite',
           name: 'SendRegistrationInvite',
           component: () => import('@/views/Dashboard/SendRegistrationInviteView.vue'),
